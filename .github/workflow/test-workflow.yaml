@@ -1,0 +1,25 @@
+name: test workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      site:
+        description: Site
+        required: true
+        type: environment
+        default: int
+  push:
+    tags:
+      - release/int/*
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  init-job:
+    environemnt: ${{ inputs.environment }}
+    runs-on: ebf-pod-ubuntu-2004@${{ github.run_id }}-build
+    name: "Init Job"
+    steps:
+      - run: echo "Init Job on ${{ var.ENVIRONMENT }}"
