@@ -28,3 +28,4 @@ jobs:
       - run: | 
           echo "Init Job on ${{ vars.ENVIRONMENT }}"
           echo "Ref Name: ${{ github.ref_name }}"
+          echo "Hello, World! string length: ${{ strlen('Hello, World!') }}"
