@@ -22,9 +22,11 @@ jobs:
   init-job:
     environment: |-
       ${{
-        [[ github.ref_name == release/"int"/* ]] && 'int' || inputs.site
+         inputs.site
       }}
     runs-on: ubuntu-latest
     name: "Init Job"
     steps:
-      - run: echo "Init Job on ${{ vars.ENVIRONMENT }}"
+      - run: | 
+          echo "Init Job on ${{ vars.ENVIRONMENT }}"
+          echo "Ref Name: ${{ github.ref_name }}"
