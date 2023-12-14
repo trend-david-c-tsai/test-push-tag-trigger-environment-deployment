@@ -22,7 +22,7 @@ jobs:
   init-job:
     environment: |-
       ${{
-         inputs.site
+         github.ref_name == 'main' && 'int' || inputs.site
       }}
     runs-on: ubuntu-latest
     name: "Init Job"
