@@ -22,4 +22,4 @@ jobs:
     runs-on: ebf-pod-ubuntu-2004@${{ github.run_id }}-build
     name: "Init Job"
     steps:
-      - run: echo "Init Job on ${{ var.ENVIRONMENT }}"
+      - run: echo "Init Job on ${{ vars.ENVIRONMENT }}"
