@@ -9,6 +9,8 @@ on:
         type: environment
         default: int
   push:
+    branches:
+      - main
     tags:
       - release/int/*
 
@@ -18,7 +20,10 @@ permissions:
 
 jobs:
   init-job:
-    environment: ${{ inputs.site }}
+    environment: |-
+      ${{
+      inputs.site
+      }}
     runs-on: ubuntu-latest
     name: "Init Job"
     steps:
