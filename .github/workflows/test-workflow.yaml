@@ -21,9 +21,7 @@ permissions:
 jobs:
   init-job:
     environment: |-
-      ${{ github.ref_name }} == release/int/*  && 'int' || ${{
-        inputs.site
-      }}
+      ${{ github.ref_name }} == release/int/*  && 'int'
     runs-on: ubuntu-latest
     name: "Init Job"
     steps:
